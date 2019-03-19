@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+
+        <script>
+
+            // function test() {
+            //     console.log('test this function');
+            // }
+            //
+            // let testWrap = test();
+            // testWrap();//error!
+
+
+            function outer(a, b) {
+                function addAndMultiplyBy2(c) {
+                    return (a + b) * c;
+                }
+
+                return addAndMultiplyBy2;
+            }
+
+            let workCall = outer(10, 20);
+            let result1 = workCall(10);
+            let result2 = workCall(20);
+
+            console.log(result1);
+            console.log(result2);
+
+
+            function calculatorWithInnerMultiplier(a, b) {
+                function simpleCalculator(multiplier) {
+                    return (a + b) * multiplier;
+
+                }
+                return simpleCalculator;
+
+            }
+
+            let innerMultiplier = calculatorWithInnerMultiplier(10, 20);
+            innerMultiplier(5); //150
+            innerMultiplier(10); //300
+
+
+
+
+
+
+            //         let numbers = [
+            // //індекси   0   1   2  3    4   5
+            //             12, 24, 33, 1, -100, 21
+            //         ];
+            //
+            //         let splice = numbers.splice(4, 1);
+            //         console.log(splice);// -100
+            //         console.log(numbers);//   12, 24, 33, 1,  21
+
+
+
+
+        </script>
+    </body>
+</html>
